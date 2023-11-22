@@ -4,13 +4,13 @@ import os
 """
     A class for managing a face database using Dlib.
 
-    It stores a dictionary in the Face Database folder
+    It stores a dictionary in the FaceData folder
 """
 class FaceDatabase:
     def __init__(self, database_filename="face_data.pkl"):
         # Find the correct path in the directory
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        self.database_path = os.path.join(script_dir, "FaceData", database_filename)
+        self.database_path = os.path.join(script_dir, "Faces", database_filename)
 
         # Ensure the directory for the database file exists
         os.makedirs(os.path.dirname(self.database_path), exist_ok=True)

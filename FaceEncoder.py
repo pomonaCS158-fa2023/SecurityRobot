@@ -39,6 +39,7 @@ for person_name in os.listdir(faces_dir):
                 embeddings.append(embedding)
 
     # Create an average embedding if there are multiple images
+    # TODO: Make a better way of calculating an accurate embedding representation
     if embeddings:
         average_embedding = np.mean(embeddings, axis=0)
         face_database.add_face(person_name, average_embedding)
