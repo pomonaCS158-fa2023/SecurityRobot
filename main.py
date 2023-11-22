@@ -61,6 +61,8 @@ if __name__ == '__main__':
                     label = future.result()
                     color = (0,255,0)
                     if label == "INTRUDER":
+                        color = (0,0,255)
+                    if label == "Analyzing":
                         color = (255,0,0)
                     cv2.rectangle(frame, (face.left(), face.top()), (face.right(), face.bottom()), color, 3)
                     cv2.putText(frame, label, (face.left(), face.top()), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2, cv2.LINE_AA)
