@@ -22,7 +22,7 @@ class FaceRecognition:
 
         detected_faces = detector(face_image_rgb, 1)
         if len(detected_faces) == 0:
-            return "No Face Detected"
+            return "Analyzing"
 
         face_rect = detected_faces[0]  # This is the rectangle
         landmarks = predictor(face_image_rgb, face_rect)
@@ -57,6 +57,6 @@ class FaceRecognition:
         face_database = FaceDatabase()
         for name, db_embedding in face_database.get_data():
             dist = np.linalg.norm(db_embedding - embedding)
-            if dist < 0.6:
+            if dist < 0.2:
                 return name  # Authorized face
         return "INTRUDER"  # Unauthorized or unknown face
