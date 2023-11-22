@@ -4,7 +4,7 @@ import os
 """
     A class for managing a face database using Dlib.
 
-    It stores a dictionary in the FaceData folder
+    It stores a dictionary in the Faces folder as a Pickle file
 """
 class FaceDatabase:
     def __init__(self, database_filename="face_data.pkl"):
