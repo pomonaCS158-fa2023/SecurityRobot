@@ -59,4 +59,4 @@ class FaceRecognition:
             dist = np.linalg.norm(db_embedding - embedding)
             if dist < 0.6:
                 return name  # Authorized face
-        return "INTRUDER"  # Unauthorized or unknown face
+        return "INTRUDER"  # Unauthorized face
