@@ -4,4 +4,4 @@ numpy
 matplotlib
 torch 
 torchvision
-jupyter
+scikit-learn
