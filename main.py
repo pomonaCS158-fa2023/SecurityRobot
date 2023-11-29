@@ -8,8 +8,8 @@ from torchvision import transforms
 from PIL import Image
 
 # Greet the authorized persons
-def greet():
-    pass
+def greet(user):
+    return "hi " + user
 
 def process_face(face_crop):
     face_recognition = FaceRecognition()
@@ -107,12 +107,13 @@ if __name__ == '__main__':
                     else:
                         authorized_user = label
                         authorization_granted = True
+                        intrusion = False
                     cv2.rectangle(frame, (face.left(), face.top()), (face.right(), face.bottom()), color, 3)
                     cv2.putText(frame, label, (face.left(), face.top()), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2, cv2.LINE_AA)
                 capture_text = "Identifying Faces"
 
                 if authorization_granted:
-                    greet(authorized_user)
+                    capture_text = greet(authorized_user)
                     # Wait for door close and then open 
                 if intrusion:
                     # Ask to leave
